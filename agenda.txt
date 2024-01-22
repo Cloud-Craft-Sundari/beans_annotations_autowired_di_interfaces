@@ -1,0 +1,36 @@
+
+Defining Scope inside a project using annotation:  @Scope
+=========================================================
+@Scope("singleton"|"prototype"|"request"|"session"|"global")
+
+
+
+
+
+Dependency Injection using annotation
+=====================================
+
+Setter Injection
+Constructor Injection
+Field/Property Injection
+
+ In order to achieve Field Injection.
+ 
+ beans.xml
+ 
+ <bean id="trainer" class="com.sundari.Trainer">
+ <bean id="sundari" class="com.sundari.SundariOrg" autowire="byName">
+ 
+ class Trainer{
+ 	private String trainerName;
+	private String courseName;
+ }
+ 
+ public class SundariOrg {	
+	private String location;	
+	private Trainer trainer;
+}
+
+Requiment-1:
+
+By the time Injecting Trainer Object into SundariOrg, Trainer Object should have default values
